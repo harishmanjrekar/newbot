@@ -12,7 +12,7 @@ embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 db = Chroma(persist_directory="vector_index_directory")
 
 # Set your OpenAI API key
-openai.api_key = "YOUR_OPENAI_API_KEY"
+openai.api_key = "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"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
