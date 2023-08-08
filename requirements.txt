@@ -1,5 +1,5 @@
 Flask==2.0.1
 azure-storage-blob==12.10.0
-transformers==4.10.0
+transformers
 langchain
-sentence-transformers==2.1.0
+sentence-transformers
