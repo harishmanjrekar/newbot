@@ -8,8 +8,8 @@ import openai
 app = Flask(__name__)
 
 # Replace with your actual Azure Blob Storage connection string
-connection_string = "YOUR_AZURE_BLOB_CONNECTION_STRING"
-container_name = "your-container-name"
+connection_string = "DefaultEndpointsProtocol=https;AccountName=rihbot;AccountKey=oKA75SGZ/8iJJXwbJjUQDVjpoPjbucabbOYGs5J5pjtXt2ypFmuIdlnrOP5kIQ4B9vcrUjLYNgUk+ASt1oHyeg==;EndpointSuffix=core.windows.net"
+container_name = "newbot"
 
 # Initialize BlobServiceClient
 blob_service_client = BlobServiceClient.from_connection_string(connection_string)
