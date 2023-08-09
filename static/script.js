@@ -17,8 +17,6 @@ sendBtn.addEventListener('click', async () => {
     const data = await response.json();
     const answer = data.answer;
 
-
-
     displayMessage(question, 'user');
     displayMessage(answer, 'bot');
 
@@ -32,4 +30,3 @@ function displayMessage(message, sender) {
     chatWindow.appendChild(messageDiv);
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-
