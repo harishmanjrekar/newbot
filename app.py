@@ -12,7 +12,7 @@ server = 'tcp:rihrih.database.windows.net'
 database = 'dbChatbot'
 username = 'rih'
 password = 'Password1'
-driver = '{{ODBC Driver 18 for SQL Server}'  # Update to the appropriate driver
+driver = '{ODBC Driver 18 for SQL Server'}  # Update to the appropriate driver
 
 # Establish the connection
 conn = pyodbc.connect(
@@ -26,7 +26,7 @@ def get_answer():
     response = openai.Completion.create(
         engine="davinci",
         prompt=user_input,
-        max_tokens=50
+        max_tokens=150
     )
     
     answer = response.choices[0].text.strip()
