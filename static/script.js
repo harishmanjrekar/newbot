@@ -1,27 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const chatContainer = document.getElementById("chat");
-    const userInput = document.getElementById("user-input");
-    const sendBtn = document.getElementById("send-btn");
+const chatWindow = document.getElementById('chat-window');
+const userInput = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
 
-    sendBtn.addEventListener("click", function () {
-        const message = userInput.value.trim();
-        if (message !== "") {
-            addMessage("user", message);
-            userInput.value = "";
+sendBtn.addEventListener('click', () => {
+    const question = userInput.value;
+    if (question.trim() === '') return;
 
-            // TODO: Send the user's question to the server and handle response
-            // You can use fetch() to send the user's question to the server and update the chat with the response
-        }
-    });
+    // Send user question to OpenAI API and handle the response
+    // Replace this with actual OpenAI API integration
 
-    function addMessage(sender, text) {
-        const messageDiv = document.createElement("div");
-        messageDiv.className = "message " + sender;
-        messageDiv.textContent = text;
+    const answer = "This is the answer from OpenAI API"; // Replace with actual answer
 
-        chatContainer.appendChild(messageDiv);
+    saveAnswerToAzure(question, answer);
 
-        // Scroll to the bottom of the chat
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
+    displayMessage(question, 'user');
+    displayMessage(answer, 'bot');
+
+    userInput.value = '';
 });
+
+function displayMessage(message, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', sender);
+    messageDiv.textContent = message;
+    chatWindow.appendChild(messageDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function saveAnswerToAzure(question, answer) {
+    // Implement Azure storage logic here
+    // Replace with actual Azure storage integration
+}
