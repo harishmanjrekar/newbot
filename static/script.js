@@ -17,7 +17,7 @@ sendBtn.addEventListener('click', async () => {
     const data = await response.json();
     const answer = data.answer;
 
-    saveAnswerToAzure(question, answer);
+
 
     displayMessage(question, 'user');
     displayMessage(answer, 'bot');
@@ -33,7 +33,3 @@ function displayMessage(message, sender) {
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-function saveAnswerToAzure(question, answer) {
-    // Implement Azure storage logic here
-    // Replace with actual Azure storage integration
-}
