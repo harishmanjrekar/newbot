@@ -12,7 +12,7 @@ server = 'tcp:rihrih.database.windows.net'
 database = 'dbChatbot'
 username = 'rih'
 password = 'Password1'
-driver = '{ODBC Driver 18 for SQL Server'}  # Update to the appropriate driver
+driver = '{ODBC Driver 18 for SQL Server}'  # Update to the appropriate driver
 
 # Establish the connection
 conn = pyodbc.connect(
