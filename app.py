@@ -24,9 +24,9 @@ def get_answer():
     user_input = request.json['user_input']
     
     response = openai.Completion.create(
-        engine="curie",
+        engine="curie",  # Use the Curie engine
         prompt=user_input,
-        max_tokens=150
+        max_tokens=50
     )
     
     answer = response.choices[0].text.strip()
@@ -41,3 +41,16 @@ def get_answer():
 
 if __name__ == '__main__':
     app.run()
+
+
+
+
+
+
+
+
+
+
+
+   
+
