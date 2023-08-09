@@ -2,14 +2,20 @@ const chatWindow = document.getElementById('chat-window');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 
-sendBtn.addEventListener('click', () => {
+sendBtn.addEventListener('click', async () => {
     const question = userInput.value;
     if (question.trim() === '') return;
 
-    // Send user question to OpenAI API and handle the response
-    // Replace this with actual OpenAI API integration
+    const response = await fetch('/get_answer', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ user_input: question })
+    });
 
-    const answer = "This is the answer from OpenAI API"; // Replace with actual answer
+    const data = await response.json();
+    const answer = data.answer;
 
     saveAnswerToAzure(question, answer);
 
