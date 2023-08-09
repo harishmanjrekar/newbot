@@ -24,7 +24,7 @@ def get_answer():
     user_input = request.json['user_input']
     
     response = openai.Completion.create(
-        engine="davinci",
+        engine="curie",
         prompt=user_input,
         max_tokens=150
     )
